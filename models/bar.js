@@ -1,14 +1,14 @@
 console.log('loading BAR model')
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-var Bar = require('./Beer')
+var Beer = require('./beer')
 
 var barSchema = new Schema ({
     name: String,
     location: String,
-    beers: [mongoose.Schema.Types.ObjectId, ref: 'Beer']
+    beers: [{type: mongoose.Schema.Types.ObjectId, ref: 'Beer'}]
 }, {
-    timestamps: true;
+    timestamps: true
 })
 
 
