@@ -1,7 +1,6 @@
 console.log('loading BEER model')
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema
-var Bar = require('./bar')
 
 var commentSchema = new Schema ({
     content: String
@@ -13,7 +12,7 @@ var beerSchema = new Schema ({
     name: String,
     style: String,
     bars: [{
-        type: Schema.Types.ObjectId, ref: 'Bar'
+        type: Schema.Types.ObjectId, ref: 'Beer'
     }],
     comments: [commentSchema]
 }, {

@@ -1,0 +1,16 @@
+<h2><%= beers.name %></h2>
+<h2><%= beers.style %></h2>
+<h2><%= beers.bars %></h2>
+
+<% beers.bars.forEach(beer => { %>
+    <%= beer.content %><br>
+    <form action='/beers/<%= beers._id %>/bars/<%= bar._id %>?_method=DELETE' method="POST">
+        <input type="submit" value='Delete Beer'>
+    </form>
+<% }) %>
+
+<form action='/beers/<%= beers._id %>/bars' method="POST">
+    <textarea name="content" cols="30" rows="10"></textarea>
+    <label for="content"></label>
+    <button name="id" value="<%= beers._id %>">New Beer</button>
+</form>

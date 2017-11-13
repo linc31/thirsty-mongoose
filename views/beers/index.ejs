@@ -1,1 +1,12 @@
 <h1>BAUURS</h1>
+
+<a href="/">Home</a>
+
+<a href="/bars">Bars</a>
+
+<% beers.forEach((beer) => { %>
+    <p><%= beer.name %></p>
+    <a href="/beers/<%= beer._id %>">Show</a>
+<% }) %>
+
+<a href="/beers/new">New</a>
